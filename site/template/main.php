@@ -14,7 +14,7 @@ function generateTemplate($nameCaller = null)
 
     if(file_exists('template/' . $nameCaller . '.template.php'))
     {
-        include('template/' . $nameCaller . '.template.php');
+        include($nameCaller . '.template.php');
     }
     else
     {
