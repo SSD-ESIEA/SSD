@@ -1,5 +1,5 @@
 SSD Project
 -----------
 
-Dépot du projet de l'équipe SSD de l'esiea pour la nuit de l'info 2013
+Dépot du projet de l'équipe SSD de l'ESIEA pour la nuit de l'info 2013
 
