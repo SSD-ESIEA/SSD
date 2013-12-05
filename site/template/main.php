@@ -1,5 +1,7 @@
 <?php
 
+session_start();
+
 function generateTemplate($nameCaller = null)
 {
     if($nameCaller == null)
@@ -10,9 +12,9 @@ function generateTemplate($nameCaller = null)
     include('header.php');
     include('footer.php');
 
-    if(file_exists($nameCaller . '.template.php'))
+    if(file_exists('template/' . $nameCaller . '.template.php'))
     {
-        include($nameCaller . '.template.php');
+        include('template/' . $nameCaller . '.template.php');
     }
     else
     {
