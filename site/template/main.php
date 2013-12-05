@@ -7,11 +7,10 @@ function generateTemplate($nameCaller = null)
     if($nameCaller == null)
         return;
 
-    echo '<!DOCTYPE html><html><body>';
-
+    echo '<!DOCTYPE html><html><head><title>Feedme</title><link rel="stylesheet" type="text/css" href="resources/style.css"></head><body>';
     include('header.php');
-    include('footer.php');
-
+    include('nav.php');
+    echo '<section class="main">';    
     if(file_exists('template/' . $nameCaller . '.template.php'))
     {
         include('template/' . $nameCaller . '.template.php');
@@ -20,7 +19,8 @@ function generateTemplate($nameCaller = null)
     {
         include('notFound.php');
     }
-
+    echo '</section>';
+    include('footer.php');
     echo '</body></html>';
 }
 ?>
