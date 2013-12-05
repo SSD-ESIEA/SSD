@@ -2,8 +2,13 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<title>Feedme</title>
+<link rel="stylesheet" type="text/css" href="resources/style.css">
 </head>
 <body>
-BOUH !
+<header>
+    <h1>Feedme</h1>
+</header>
+
 </body>
 </html>
