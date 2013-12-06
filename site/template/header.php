@@ -5,7 +5,7 @@
 <?php
 if(isset($_SESSION['login']))
 {
-    echo  '<p>Vous êtes connecté en tant que : '.$_SESSION['login'].'<br><br><a href="logout.php">Se déconnecter</a></p>';
+    echo  '<p>Vous êtes connecté en tant que : '.$_SESSION['login'].'<br><a href="userInfo.php">Vos préférences</a><br><a href="logout.php">Se déconnecter</a></p>';
 }
 else
 {
