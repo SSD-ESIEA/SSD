@@ -1,3 +1,6 @@
 <section class="idee">
-<?php echo "Idee du jour : bla bla bla bla bla"; ?>
+<?php
+include_once 'DBInterface.php';
+echo 'Idee du jour :'.getRandomObject()['name'];
+?>
 </section>
