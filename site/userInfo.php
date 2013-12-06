@@ -7,12 +7,10 @@
 
 	$bdd = new DBInterface();
 
-	$selfPage = ($_GET['user'] == $_SESSION['login']);
-	echo 'selfpage = ' . $selfpage . '<br>';
+	$selfPage = ($_GET['user'] == $_SESSION['login']) ? 1 : 0;
 
 	if($selfPage && (isset($_GET['sex']) || isset($_GET['city']) || isset($_GET['age'])))
 	{
-		echo 'Branch 1';
 		$age = isset($_GET['age']) ? $_GET['age'] : null;
 		$sex = isset($_GET['sex']) ? $_GET['sex'] : 0;
 		$city = isset($_GET['city']) ? $_GET['city'] : null;
@@ -23,12 +21,10 @@
 	}
 	else if($selfPage)
 	{
-		echo 'Branch 2';
 		generateTemplate('modificationUserData');
 	}
 	else
 	{
-		echo 'Branch 3';
 		generateTemplate('displayUserPage');
 	}
 ?>
