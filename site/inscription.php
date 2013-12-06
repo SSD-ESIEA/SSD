@@ -3,6 +3,8 @@
     include_once "template/main.php";
     include_once "includes/DBInterface.php";
 
+    $bdd = new DBInterface();
+
     if(isset($_SESSION['login'])) //utilisateur connecter
     {
         //redirect to index.php
@@ -18,14 +20,14 @@
             && isset($_POST['email-confirm'])
             ) /* Form submited */
             {
-                if(!isUserExist($_POST['pseudo']))
+                if(!$bdd->isUserExist($_POST['pseudo']))
                 {
-                    if($_POST['email'] == $_POST['email-confirm'] && filter_var($_POST['email'], FILTER_VALIDATE_EMAIL) && !isMailAlreadyTaken($_POST['email']))
+                    if($_POST['email'] == $_POST['email-confirm'] && filter_var($_POST['email'], FILTER_VALIDATE_EMAIL) && !$bdd->isMailAlreadyTaken($_POST['email']))
                     {
                     // mail is valid
                         if($_POST['password'] == $_POST['password-confirm'])
                         {
-                            if(addUser($_POST['pseudo'], $_POST['password'], $_POST['email']))// Everything ok
+                            if($bdd->addUser($_POST['pseudo'], $_POST['password'], $_POST['email']))// Everything ok
                             {
                                 // User Added
                                 echo "Utilisateur aouté avec succès !";
