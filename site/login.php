@@ -16,6 +16,7 @@
 		if($bdd->isUserValid($_POST['user'], $_POST['pass']))
 		{
 			$_SESSION['login'] = htmlentities($_POST['user'], ENT_HTML5);
+			$_SESSION['loginRAW'] = $_POST['user'];
 			header('Location: /');
 		}
 		else
