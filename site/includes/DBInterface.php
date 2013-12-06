@@ -79,6 +79,14 @@ class DBInterface
 
         return $req->fetchAll();
     }
+
+    function getRandomObject()
+    {
+        $req = $this->database->prepare('SELECT * FROM feedme_object WHERE type = object ORDER BY RAND() LIMIT 1');
+        $req->execute();
+
+        return $req->fetch();
+    }
 }
 
 ?>
