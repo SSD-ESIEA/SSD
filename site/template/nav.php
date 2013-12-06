@@ -4,7 +4,7 @@
 <?php 
    if(isset($_SESSION['login']))
    {
-        echo "<a href=\"/inscription.php\">Inscription</a>"
+        echo "<a href=\"/inscription.php\">Inscription</a>";
    }
 
 ?>
