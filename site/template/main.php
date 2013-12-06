@@ -11,7 +11,7 @@ function generateTemplate($nameCaller = null)
     include('header.php');
     include('nav.php');
     include('about.php');
-    //include('idee.php');
+    include('idee.php');
     echo '<section class="main">';    
     if(file_exists('template/' . $nameCaller . '.template.php'))
     {
