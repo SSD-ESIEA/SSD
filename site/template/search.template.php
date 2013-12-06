@@ -1,17 +1,19 @@
 <?php
 
-include("includes/DBInterface.php");
-$bdd = new DBInterface();
+global $bdd;
 
 if(!isset($_GET['parent']))
 {
-    $objects = $bdd->getUserByParent();
+    $objects = $bdd->getObjectByParent(0);
 }
 else
 {
-    $objects = $bdd->getUserByParent($_GET['parent']);
+    $objects = $bdd->getObjectByParent($_GET['parent']);
 }
 
-var_dump($objects);
+foreach($objects as $object)
+{
+    echo '<p><a href="search.php?parent=' . $object['id']  . '">' . $object['nom'] . '</a></p>';
+}
 
 ?>
