@@ -1,7 +1,13 @@
 <footer>
 <p>FOOTER MESSAGE</p>
 <p>
-<a href="login.php">Connexion</a>
+<?php
+
+	if(isset($_SESSION['login']))
+		echo '<a href="logout.php">Déconnexion</a>';
+	else
+		echo '<a href="login.php">Connexion</a>';
+?>
 <a href="administration.php">Adminsitration</a>
 </p>
 
