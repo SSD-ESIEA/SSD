@@ -50,8 +50,10 @@ class DBInterface
 
     function getObjectByParent($parent = NULL)
     {
-        $req = $this->database->prepare('SELECT * FROM feedme_object WHERE parent = ?');
-        $req->execute(array($parent));
+        $req = $this->database->prepare('SELECT * FROM feedme_object WHERE parent = :parent');
+        $req->bindValue(':parent', $parent, PDO::PARAM_INT);
+
+        $req->execute();
 
         return $req->fetchAll();
     }
