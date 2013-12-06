@@ -15,7 +15,6 @@
             && !empty($_POST['pseudo'])
             && !empty($_POST['password'])
             && !empty($_POST['password-confirm'])
-            && !empty($_POST['email-confirm'])
             ) /* Form submited */
             {
                 if(!$bdd->isUserExist($_POST['pseudo']))
