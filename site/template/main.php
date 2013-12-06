@@ -10,6 +10,8 @@ function generateTemplate($nameCaller = null)
     echo '<!DOCTYPE html><html><head><title>Feedme</title><link rel="stylesheet" type="text/css" href="resources/style.css"></head><body>';
     include('header.php');
     include('nav.php');
+    include('about.php');
+    include('idee.php');
     echo '<section class="main">';    
     if(file_exists('template/' . $nameCaller . '.template.php'))
     {
