@@ -1,7 +1,4 @@
 <?php
-
-	error_reporting(E_ALL);
-
 	include('template/main.php');
 	include('includes/DBInterface.php');
 	
@@ -10,7 +7,7 @@
 
 	$bdd = new DBInterface();
 
-	$selfPage = ($_GET['user'] === $_SESSION['login']);
+	$selfPage = ($_GET['user'] == $_SESSION['login']);
 
 	if($selfPage && (isset($_GET['sex']) || isset($_GET['city']) || isset($_GET['age'])))
 	{
