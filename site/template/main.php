@@ -7,7 +7,7 @@ function generateTemplate($nameCaller = null)
     if($nameCaller == null)
         return;
 
-    echo '<!DOCTYPE html><html><head><title>Feedme</title><link rel="stylesheet" type="text/css" href="resources/style.css"></head><body>';
+    echo '<!DOCTYPE html><html><head><title>Feedme</title><link rel="stylesheet" type="text/css" href="resources/style.css"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></head><body>';
     include('header.php');
     include('nav.php');
     include('about.php');
