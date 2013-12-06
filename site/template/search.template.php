@@ -13,7 +13,10 @@ else
 
 foreach($objects as $object)
 {
-    echo '<p><a href="search.php?parent=' . $object['id']  . '">' . $object['nom'] . '</a></p>';
+    if($object['type'] == 'node')
+        echo '<p><a href="search.php?parent=' . $object['id']  . '">' . $object['nom'] . '</a></p>';
+    else
+        echo '<p>' . $object['nom'] . '</p>';
 }
 
 ?>
