@@ -5,19 +5,17 @@
 
     $bdd = new DBInterface();
 
-    if(isset($_SESSION['login'])) //utilisateur connecter
-    {
-        //redirect to index.php
-        header('Location: index.php');  
-    }
+    if(isset($_SESSION['login'])) //utilisateur connecté
+        header('Location: /');  
+
     elseif(isset($_POST['submit']))
     {
-        if(isset($_POST['email']) 
-            && isset($_POST['email-confirm'])
-            && isset($_POST['pseudo'])
-            && isset($_POST['password'])
-            && isset($_POST['password-confirm'])
-            && isset($_POST['email-confirm'])
+        if(!empty($_POST['email']) 
+            && !empty($_POST['email-confirm'])
+            && !empty($_POST['pseudo'])
+            && !empty($_POST['password'])
+            && !empty($_POST['password-confirm'])
+            && !empty($_POST['email-confirm'])
             ) /* Form submited */
             {
                 if(!$bdd->isUserExist($_POST['pseudo']))
@@ -28,33 +26,21 @@
                         if($_POST['password'] == $_POST['password-confirm'])
                         {
                              // Everything ok
-                            $bdd->addUser($_POST['pseudo'], $_POST['password'], $_POST['email']);
-                            echo "Utilisateur aouté avec succès !";
+                            $bdd->addUser($_POST['pseudo'], $_POST['password'], $_POST['email'], !empty($_POST['age']) && is_int($_POST['age']) ? $_POST['age'] : 0 , $_POST['sex'] == 1 || 2 ? $_POST['sex'] : 0, empty($_POST['city']) ? null : $_POST['city']);
+                            generateTemplate('inscriptionSuccess');
                         }
                         else
-                        {
-                            // Password are not the same
-                            echo "Les mots de passes ne correspondent pas !";
-                        }
+                            generateTemplate('inscriptionPassIssue');
                     }
                     else
-                    {
-                        //mail invalid or not the same
-                        echo "L'adresse mail n'est pas conforme ou la confirmation n'est pas bonne !";
-                    }
+                        generateTemplate('inscriptionEmailIssue');
                 }
-                else //pseudo already taken
-                {
-                    echo "Pseudo déjà utilisé !";
-                }
+                else
+                    generateTemplate('inscriptionPseudoUsed');
             }
             else
-            {
-                echo "Des infos sont manquantes !";
-            }
-    }
+                generateTemplate('inscriptionMissingData');
+        }
     else
-    {
         generateTemplate("inscription");
-    }
 ?>
