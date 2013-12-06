@@ -7,14 +7,36 @@ header
 {
     float: left;
     margin: 5px;
+    /*border: 3px solid black;*/
+    border-radius: 5px;
+    color: red;
+    margin-right: 225px;
+    padding: 0px;
+}
+
+header img
+{
+    border-radius:5px;
+    border: 3px solid black;
+    margin: 0px;
+}
+
+.loginBox
+{
+    width: 200px;
+    height: 160px;
+    float: right;
+    margin: 5px;
     border: 3px solid black;
     border-radius: 10px;
     padding: 5px;
-    color: red;
-    height: 80px;
-    margin-right: 225px;
+
 }
 
+.loginBox p
+{
+    vertical-align:center;
+}
 nav
 {
     clear:both;
@@ -56,14 +78,3 @@ footer
     padding: 5px;
 }
 
-.loginBox
-{
-    width: 200px;
-    height: 80px;
-    float: right;
-    margin: 5px;
-    border: 3px solid black;
-    border-radius: 10px;
-    padding: 5px;
-
-}
