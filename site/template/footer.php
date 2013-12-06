@@ -1,5 +1,5 @@
 <footer>
-    <p>FOOTER MESSAGE</p>
+    <p>Ce site a ete realise dans le cadre de la nuit de l'info 2013</p>
     <p>
     <?php
 
