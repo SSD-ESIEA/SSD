@@ -9,5 +9,5 @@
 
 ?>
 
-<a href="/about.php">A propos</a>
+<a href="/about_txt.php">A propos</a>
 </nav>
