@@ -1,4 +1,7 @@
 <?php
-
-    //TODO put here config variables
+$CONFIG['bdd_hostname'] = 'host adress';
+$CONFIG['bdd_port'] = 3306; //default port
+$CONFIG['bdd_user'] = 'feedme'; //defaut feedme
+$CONFIG['bdd_password'] = 'le super mot de passe de la base'; 
+$CONFIG['bdd_dbname'] = 'feedme'; //default feedme
 ?>
