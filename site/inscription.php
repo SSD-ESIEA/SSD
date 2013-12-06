@@ -10,15 +10,15 @@
 
     elseif(isset($_POST['submit']))
     {
-        if(isset($_POST['email']) 
-            && isset($_POST['email-confirm'])
-            && isset($_POST['pseudo'])
-            && isset($_POST['password'])
-            && isset($_POST['password-confirm'])
-            && isset($_POST['email-confirm'])
-            && isset($_POST['age'])
-            && isset($_POST['sex'])
-            && isset($_POST['city'])
+        if(!empty($_POST['email']) 
+            && !empty($_POST['email-confirm'])
+            && !empty($_POST['pseudo'])
+            && !empty($_POST['password'])
+            && !empty($_POST['password-confirm'])
+            && !empty($_POST['email-confirm'])
+            && !empty($_POST['age'])
+            && !empty($_POST['sex'])
+            && !empty($_POST['city'])
             ) /* Form submited */
             {
                 if(!$bdd->isUserExist($_POST['pseudo']))
