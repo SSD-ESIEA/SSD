@@ -5,11 +5,11 @@
 <?php
 if(isset($_SESSION['login']))
 {
-    echo  $_SESSION['login'].' : vous etes connecte<br><a href="logout.php">Se deconecter</a>';
+    echo  '<p>'.$_SESSION['login'].' : vous etes connecte<br><a href="logout.php">Se deconecter</a></p>';
 }
 else
 {
-    echo '<a href="./login.php">Se connecter</a>';
+    echo '<p><a href="./login.php">Se connecter</a></p>';
 }
 ?>
 </section>
