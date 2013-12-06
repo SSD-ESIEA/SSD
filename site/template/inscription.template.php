@@ -1,4 +1,4 @@
-<form method="post" target="todo.php">
+<form method="post" action="inscription.php">
     <input type="text" placeholder="Pseudo" name="pseudo" id="pseudo"><br>
     <input type="password" placeholder="Password" name="password" id="password"><br>
     <input type="password" placeholder="Password (confirmation)" name="password-confirm" id="password-confirm"><br>
