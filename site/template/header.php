@@ -1,5 +1,5 @@
 <header>
-<h1>Feedme</h1>
+<img src="resources/ban.jpg" alt="FeedMe"> 
 </header>
 <section class="loginBox">
 <?php
