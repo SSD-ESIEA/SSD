@@ -1,6 +1,6 @@
 <?php
 
-include_once "includes/DBInterface.php";
+include("includes/DBInterface.php");
 $bdd = new DBInterface();
 
 if(!isset($_GET['parent']))
