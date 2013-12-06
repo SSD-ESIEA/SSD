@@ -1,4 +1,15 @@
 <header>
-<h1>Feedme</h1>
+<a href="/"><img src="resources/ban.jpg" alt="FeedMe"></a>
 </header>
-
+<section class="loginBox">
+<?php
+if(isset($_SESSION['login']))
+{
+    echo  '<p>Vous êtes connecté en tant que : '.$_SESSION['login'].'<br><br><a href="logout.php">Se déconnecter</a></p>';
+}
+else
+{
+    echo '<p><a href="./login.php">Se connecter</a></p>';
+}
+?>
+</section>
