@@ -48,6 +48,13 @@ class DBInterface
 
     }
 
+    function getObjectByParent($parent = NULL)
+    {
+        $req = $this->database->prepare('SELECT * FROM feedme_object WHERE parent = ?');
+        $req->execute(array($parent));
+
+        return $req->fetchAll();
+    }
 }
 
 ?>
