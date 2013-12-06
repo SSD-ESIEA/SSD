@@ -16,9 +16,6 @@
             && !empty($_POST['password'])
             && !empty($_POST['password-confirm'])
             && !empty($_POST['email-confirm'])
-            && !empty($_POST['age'])
-            && !empty($_POST['sex'])
-            && !empty($_POST['city'])
             ) /* Form submited */
             {
                 if(!$bdd->isUserExist($_POST['pseudo']))
@@ -29,7 +26,7 @@
                         if($_POST['password'] == $_POST['password-confirm'])
                         {
                              // Everything ok
-                            $bdd->addUser($_POST['pseudo'], $_POST['password'], $_POST['email'], $_POST['age'], $_POST['sex'] == 1 || 2 ? $_POST['sex'] : 0, $_POST['city']);
+                            $bdd->addUser($_POST['pseudo'], $_POST['password'], $_POST['email'], !empty($_POST['age']) && is_int($_POST['age']) ? $_POST['age'] : 0 , $_POST['sex'] == 1 || 2 ? $_POST['sex'] : 0, empty($_POST['city']) ? null : $_POST['city']);
                             generateTemplate('inscriptionSuccess');
                         }
                         else
