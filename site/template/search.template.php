@@ -1,8 +1,5 @@
 <?php
 
-include("includes/DBInterface.php");
-$bdd = new DBInterface();
-
 if(!isset($_GET['parent']))
 {
     $objects = $bdd->getUserByParent();
