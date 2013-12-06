@@ -7,9 +7,7 @@
 
 	$bdd = new DBInterface();
 
-	$selfPage = ($_GET['user'] == $_SESSION['login']) ? 1 : 0;
-
-	if($selfPage && (!empty($_POST['sex']) || !empty($_POST['city']) || !empty($_POST['age'])))
+	if(!empty($_POST['sex']) || !empty($_POST['city']) || !empty($_POST['age']))
 	{
 		$age = isset($_GET['age']) ? $_GET['age'] : null;
 		$sex = isset($_GET['sex']) ? $_GET['sex'] : 0;
@@ -19,12 +17,8 @@
 
 		generateTemplate('modificationUserSaved');
 	}
-	else if($selfPage)
-	{
-		generateTemplate('modificationUserData');
-	}
 	else
 	{
-		generateTemplate('displayUserPage');
+		generateTemplate('modificationUserData');
 	}
 ?>
