@@ -1,5 +1,7 @@
 <?php
 
+	error_reporting(E_ALL);
+
 	include('template/main.php');
 	include('includes/DBInterface.php');
 	
