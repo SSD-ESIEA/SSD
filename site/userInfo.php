@@ -9,7 +9,7 @@
 
 	$selfPage = ($_GET['user'] == $_SESSION['login']) ? 1 : 0;
 
-	if($selfPage && (isset($_GET['sex']) || isset($_GET['city']) || isset($_GET['age'])))
+	if($selfPage && (!empty($_POST['sex']) || !empty($_POST['city']) || !empty($_POST['age'])))
 	{
 		$age = isset($_GET['age']) ? $_GET['age'] : null;
 		$sex = isset($_GET['sex']) ? $_GET['sex'] : 0;
