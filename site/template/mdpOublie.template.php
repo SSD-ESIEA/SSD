@@ -1,4 +1,4 @@
-<form method="POST" action="todo.php">
+<form method="POST" action="mdpOublie.php">
 	
 	<label for="emailForget">Veuillez rentrer votre email pour réinitialiser votre Mot de passe :</label>
 	<input name="email" id="emailForget" type="email" required> <br>
