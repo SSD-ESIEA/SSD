@@ -27,7 +27,8 @@
                     // mail is valid
                         if($_POST['password'] == $_POST['password-confirm'])
                         {
-                            $bdd->addUser($_POST['pseudo'], $_POST['password'], $_POST['email']))// Everything ok
+                             // Everything ok
+                            $bdd->addUser($_POST['pseudo'], $_POST['password'], $_POST['email']);
                             echo "Utilisateur aouté avec succès !";
                         }
                         else
