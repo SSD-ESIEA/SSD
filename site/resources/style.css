@@ -5,7 +5,34 @@ body
 
 header
 {
+    margin: 5px;
+    border: 3px solid black;
+    border-radius: 10px;
+    padding: 5px;
     color: red;   
 }
 
+nav
+{
+    margin: 5px;
+    border: 3px solid black;
+    border-radius: 10px;
+    padding: 5px;
+}
 
+
+footer
+{
+    margin: 5px;
+    border: 3px solid black;
+    border-radius: 10px;
+    padding: 5px;
+}
+
+.main
+{
+    margin: 5px;
+    border: 3px solid black;
+    border-radius: 10px;
+    padding: 5px;
+}
