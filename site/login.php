@@ -2,8 +2,13 @@
 	/**
 	 * Formulaire de connexion
 	 */
+
 	include('template/main.php');
 	include('includes/DBInterface.php');
+	
+	if(isset($_SESSION['login']))
+		header('Location: /');
+
 	$bdd = new DBInterface();
 
 	if(isset($_POST['user']) && isset($_POST['pass']))
