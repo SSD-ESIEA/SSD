@@ -1,6 +1,6 @@
 <section class="idee">
 <?php
-include_once 'DBInterface.php';
+require_once '../includes/DBInterface.php';
 echo 'Idee du jour :'.getRandomObject()['name'];
 ?>
 </section>
